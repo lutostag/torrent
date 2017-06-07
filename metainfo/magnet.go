@@ -13,6 +13,7 @@ type Magnet struct {
 	InfoHash    Hash
 	Trackers    []string
 	DisplayName string
+        URLList     []string
 }
 
 const xtPrefix = "urn:btih:"
@@ -27,6 +28,9 @@ func (m Magnet) String() string {
 	}
 	for _, tr := range m.Trackers {
 		ret += "&tr=" + url.QueryEscape(tr)
+	}
+	for _, ws := range m.URLList {
+		ret += "&ws=" + url.QueryEscape(ws)
 	}
 	return ret
 }
@@ -73,5 +77,6 @@ func ParseMagnetURI(uri string) (m Magnet, err error) {
 	}
 	m.DisplayName = u.Query().Get("dn")
 	m.Trackers = u.Query()["tr"]
+	m.URLList = u.Query()["ws"]
 	return
 }
