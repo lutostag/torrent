@@ -13,7 +13,7 @@ type Magnet struct {
 	InfoHash    Hash
 	Trackers    []string
 	DisplayName string
-        URLList     []string
+	URLList     []string
 }
 
 const xtPrefix = "urn:btih:"
