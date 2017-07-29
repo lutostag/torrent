@@ -48,7 +48,7 @@ type torrentFile struct {
 	CreationDate int64       `bencode:"creation date,omitempty"`
 	Comment      string      `bencode:"comment,omitempty"`
 	CreatedBy    string      `bencode:"created by,omitempty"`
-	URLList      interface{} `bencode:"url-list,omitempty"`
+	UrlList      interface{} `bencode:"url-list,omitempty"`
 }
 
 func testFile(t *testing.T, filename string) {

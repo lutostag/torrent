@@ -71,7 +71,7 @@ func (mi *MetaInfo) Magnet(displayName string, infoHash Hash) (m Magnet) {
 	}
 	m.DisplayName = displayName
 	m.InfoHash = infoHash
-	m.URLList = mi.URLList
+	m.UrlList = mi.UrlList
 	return
 }
 
